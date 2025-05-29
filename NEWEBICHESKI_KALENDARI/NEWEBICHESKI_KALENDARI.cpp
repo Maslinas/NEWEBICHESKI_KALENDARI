@@ -44,7 +44,7 @@ map<string, vector<Task>> loadCalendarFromFile(const string& filename) {
     ifstream infile(filename);
     if (infile.is_open()) {
         time_t t = time(0);
-        tm* now = localtime(&t);
+        tm* now = localtime_s(&t);
         int day, month;
         string description;
         while (infile >> day >> month) {
